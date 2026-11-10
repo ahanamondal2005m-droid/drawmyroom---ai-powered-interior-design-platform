@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "roomsolver"
+version = "0.1.0"
+description = "Grade furniture-layout usability and search for the best arrangement."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Dylan Fox" }]
+keywords = ["floor-plan", "furniture", "layout", "interior-design", "solver"]
+dependencies = [
+    "shapely>=2.0",
+    "matplotlib>=3.5",
+]
+
+[project.urls]
+Homepage = "https://github.com/Dylanlf/roomsolver"
+
+[tool.setuptools]
+packages = ["roomsolver"]

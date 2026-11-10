@@ -1,0 +1,238 @@
+[
+  {
+    "id": "proj_default_loft",
+    "userId": "user_default",
+    "name": "Modern Loft Living Room",
+    "roomType": "Living Room",
+    "dimensions": {
+      "lengthFt": 18,
+      "widthFt": 14,
+      "ceilingHeightFt": 10,
+      "unit": "ft"
+    },
+    "budget": {
+      "totalCap": 2200,
+      "committed": 2720,
+      "currency": "USD"
+    },
+    "sketch": {
+      "uploaded": false,
+      "url": "",
+      "fileName": "",
+      "detectedFeatures": {
+        "walls": 4,
+        "doors": 1,
+        "windows": 2,
+        "usableAreaSqFt": 252,
+        "confidence": "High",
+        "aspectRatio": "1.28:1",
+        "orientation": "North-East"
+      }
+    },
+    "clearanceSettings": {
+      "egressPathInches": 36,
+      "doorArcSwing": true
+    },
+    "placedObjects": [
+      {
+        "id": "obj_1",
+        "catalogId": "furn_sofa_nocturne",
+        "name": "Nocturne Curved Sectional",
+        "category": "Seating",
+        "dimensions": {
+          "lengthIn": 96,
+          "widthIn": 42,
+          "heightIn": 31
+        },
+        "position": {
+          "x": 12.744926069297584,
+          "y": 12.25,
+          "z": 0
+        },
+        "rotation": 0,
+        "price": 1299,
+        "material": "Sand Bouclé",
+        "vendor": "CB2 Contract",
+        "anchorType": "L-ANCHOR",
+        "clearanceConflict": true,
+        "visible": true,
+        "conflictMessage": "only 28\" between Nocturne Curved Sectional and Aura Arc Luminaire — part of the room sits behind a sub-30\" pinch"
+      },
+      {
+        "id": "obj_2",
+        "catalogId": "furn_table_organic_teak",
+        "name": "Organic Teak Coffee Table",
+        "category": "Tables & Desks",
+        "dimensions": {
+          "lengthIn": 48,
+          "widthIn": 24,
+          "heightIn": 16
+        },
+        "position": {
+          "x": 8,
+          "y": 6.5,
+          "z": 0
+        },
+        "rotation": 0,
+        "price": 379,
+        "material": "Dark Walnut",
+        "vendor": "CB2 Contract",
+        "anchorType": "FREE",
+        "clearanceConflict": false,
+        "visible": true
+      },
+      {
+        "id": "obj_3",
+        "catalogId": "furn_credenza_aurelia",
+        "name": "Aurelia Media Credenza",
+        "category": "Storage & Media",
+        "dimensions": {
+          "lengthIn": 72,
+          "widthIn": 18,
+          "heightIn": 20
+        },
+        "position": {
+          "x": 9,
+          "y": 1.5,
+          "z": 0
+        },
+        "rotation": 0,
+        "price": 490,
+        "material": "Ebonized Ash",
+        "vendor": "Muuto Studio",
+        "anchorType": "WALL-ANCHOR",
+        "clearanceConflict": false,
+        "visible": true
+      },
+      {
+        "id": "obj_4",
+        "catalogId": "furn_luminaire_aura",
+        "name": "Aura Arc Luminaire",
+        "category": "Lighting",
+        "dimensions": {
+          "lengthIn": 28,
+          "widthIn": 28,
+          "heightIn": 78
+        },
+        "position": {
+          "x": 14,
+          "y": 6.5,
+          "z": 0
+        },
+        "rotation": 45,
+        "price": 240,
+        "material": "Satin Brass & Cast Iron",
+        "vendor": "Flos Studio",
+        "anchorType": "FREE",
+        "clearanceConflict": true,
+        "visible": true,
+        "conflictMessage": "only 28\" between Nocturne Curved Sectional and Aura Arc Luminaire — part of the room sits behind a sub-30\" pinch"
+      },
+      {
+        "id": "obj_5",
+        "catalogId": "furn_rug_basalt",
+        "name": "Basalt Micro-Ribbed Wool Rug",
+        "category": "Rugs & Textiles",
+        "dimensions": {
+          "lengthIn": 120,
+          "widthIn": 96,
+          "heightIn": 0.5
+        },
+        "position": {
+          "x": 8.5,
+          "y": 7,
+          "z": 0
+        },
+        "rotation": 0,
+        "price": 312,
+        "material": "Nordic Wool / Slate",
+        "vendor": "CB2 Contract",
+        "anchorType": "FLOOR",
+        "clearanceConflict": false,
+        "visible": true
+      }
+    ],
+    "materialSpecs": {
+      "activePlane": "SURF_FLR_01",
+      "activeMaterialId": "mat_wood_chevron_smoked_oak",
+      "materials": [
+        {
+          "id": "mat_wood_chevron_smoked_oak",
+          "plane": "SURF_FLR_01",
+          "name": "Chevron Smoked Oak",
+          "category": "Flooring",
+          "origin": "Black Forest, Germany",
+          "pricePerSqFt": 11.2,
+          "roughness": 0.35,
+          "normalDepthMm": 1.28,
+          "vocRating": "Ultra-Low",
+          "scratchIndex": "AC5 High-Com",
+          "slipResistance": "R10 / DCOF 0.52",
+          "color": "#4A3525"
+        },
+        {
+          "id": "mat_wall_microcement_slate",
+          "plane": "SURF_WALL_01",
+          "name": "Microcement Slate",
+          "category": "Wall Finish",
+          "origin": "Milan, Italy",
+          "pricePerSqFt": 9.5,
+          "roughness": 0.48,
+          "normalDepthMm": 0.85,
+          "vocRating": "A+ Pure",
+          "scratchIndex": "Heavy Traffic",
+          "slipResistance": "N/A",
+          "color": "#71757E"
+        }
+      ]
+    },
+    "lightingConfig": {
+      "solarOrientationDeg": 135.4,
+      "altitudeDeg": 42,
+      "directDni": 840,
+      "zenithLux": 38200,
+      "diurnalTime": "16:45",
+      "casementWidthFt": 10,
+      "casementHeightFt": 7,
+      "windowToWallRatio": 42.8,
+      "glazingSpec": "(SHGC) 0.38 Low-E",
+      "linenDrapeDiffusion": true,
+      "totalLumenBudget": 3800,
+      "allocatedLumens": 3450,
+      "daylightLumens": 1720,
+      "artificialLumens": 1730,
+      "activeLuminaires": [
+        {
+          "id": "lum_1",
+          "name": "Architectural Linear Cove",
+          "type": "Linear Cove",
+          "lumens": 950,
+          "cct": "2700K",
+          "powerWatts": 18,
+          "status": "Active"
+        },
+        {
+          "id": "lum_2",
+          "name": "Flos Style Brass Arc",
+          "type": "Task Arc",
+          "lumens": 480,
+          "cct": "3000K",
+          "powerWatts": 8,
+          "status": "Active"
+        },
+        {
+          "id": "lum_3",
+          "name": "Flush Gimbal Cans (3x)",
+          "type": "Spot Gimbal",
+          "lumens": 300,
+          "cct": "3000K",
+          "powerWatts": 12,
+          "status": "Active"
+        }
+      ],
+      "circadianScorePercent": 96
+    },
+    "createdAt": "2026-11-09T18:44:12.583Z",
+    "updatedAt": "2026-11-10T16:41:39.508Z"
+  }
+]

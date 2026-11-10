@@ -1,0 +1,6 @@
+{
+  "name": "DrawMyRoom – AI-Powered Interior Design Platform",
+  "description": "Transform your room sketch into an interactive 3D dream space with precision spatial clearance, curated architectural catalog, materials studio, lighting simulation, and BoQ budget estimates.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_LOCAL_LAYOUT_ENGINE"]
+}
