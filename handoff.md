@@ -519,6 +519,21 @@ no `include`, so everything outside `dist` compiles).
     partially match `CATALOG_ITEMS`, so the BoQ procurement window resolves for the
     rows that match (solver-staged rows always match, since they come from the
     catalog). The card states the resolved count.
+13. **Stale-state PUT race in the studio (pre-existing; caused a real incident on
+    2026-11-11 ~15:02).** `handleUpdateActiveProject` PUTs the *entire* in-memory
+    `activeProject` to `PUT /api/projects/:id` — and that object is the seed
+    project (`src/data/seed.ts`, whose `createdAt`/`updatedAt` are stamped at
+    module load) until the initial `listProjects()` fetch resolves. If any
+    project-mutating action fires in that window (staging style, design restore,
+    catalog placement, drag), the seed overwrites the stored project
+    (last-write-wins JSON store). The incident wrote a seed-shaped
+    `proj_default_loft` over the real layout; it was detected via
+    `git status` and restored with `git checkout -- data/projects.json`
+    (`data/*.json` is git-tracked — always check `git status data/` after a
+    suspicious studio session). A proper fix (suppress PUTs until the project
+    list resolves, or PUT only the changed fields instead of the whole object)
+    is a behavior change and needs a product decision — deliberately not made
+    during the structural refactor.
 
 ---
 
