@@ -281,25 +281,33 @@ These are the scripts used to keep both servers alive independently of OpenCode:
 - `C:\Users\ahana\AppData\Local\Temp\opencode\run-backend.ps1`
 - `C:\Users\ahana\AppData\Local\Temp\opencode\run-frontend.ps1`
 
-They auto-detect the project folder, `Set-Location -LiteralPath` to the real Unicode
-path, prepend the portable Node folder to `PATH`, set the env vars, and redirect
-output to:
+Both auto-detect the project folder with a wildcard match (the real folder name
+contains an en dash that Windows PowerShell 5.1 mangles inside BOM-less `.ps1`
+files) and prepend the portable Node folder to `PATH`.
 
-- `C:\Users\ahana\AppData\Local\Temp\opencode\logs\backend.out.log`
-- `C:\Users\ahana\AppData\Local\Temp\opencode\logs\frontend-live2.out.log`
+- The **backend** launcher runs `tsx server.ts` in the foreground with `*>>`
+  redirection; output lands in
+  `C:\Users\ahana\AppData\Local\Temp\opencode\logs\backend.out.log`.
+- The **frontend** launcher (rewritten 2026-11-11) starts vite with
+  `Start-Process -WindowStyle Hidden` and exits immediately, so node is fully
+  detached; vite output goes to a hidden console (no log file — health-check
+  `http://127.0.0.1:5173/` instead). Reason: vite's dev server exits when its
+  stdin reaches EOF (`process.stdin.on("end", ...)` in
+  `node_modules/vite/dist/node/node.js`), so a console-less detached launcher
+  running a plain `node vite.js *>> log` kills vite before it ever listens.
+  A hidden console's stdin never ends, so vite stays up. `tsx server.ts` never
+  reads stdin, which is why the backend launcher is immune.
 
 Launch both detached (PowerShell):
 
 ```powershell
-$b = ([wmiclass]'Win32_Process').Create(
-  'powershell.exe -NoProfile -ExecutionPolicy Bypass -File "C:\Users\ahana\AppData\Local\Temp\opencode\run-backend.ps1"')
-$f = ([wmiclass]'Win32_Process').Create(
-  'powershell.exe -NoProfile -ExecutionPolicy Bypass -File "C:\Users\ahana\AppData\Local\Temp\opencode\run-frontend.ps1"')
-"backend pid=$($b.ProcessId) ret=$($b.ReturnValue)"
-"frontend pid=$($f.ProcessId) ret=$($f.ReturnValue)"
+([wmiclass]'Win32_Process').Create('powershell.exe -NoProfile -ExecutionPolicy Bypass -File "C:\Users\ahana\AppData\Local\Temp\opencode\run-backend.ps1"') | Out-Null
+powershell -NoProfile -ExecutionPolicy Bypass -File "C:\Users\ahana\AppData\Local\Temp\opencode\run-frontend.ps1"
 ```
 
-Both should report `ret=0`. Then wait ~10 s (backend) and ~30 s (frontend) before
+The frontend one-liner works from any terminal and returns immediately (it
+prints the spawned node pid); the WMI `Win32_Process.Create` form works for
+both scripts as well. Then wait ~10 s (backend) and ~30 s (frontend) before
 checking the URLs.
 
 ### Stop everything
