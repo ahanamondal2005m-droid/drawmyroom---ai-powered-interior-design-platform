@@ -1,0 +1,1323 @@
+[
+  {
+    "name": "GET /api/projects",
+    "status": 200,
+    "expected": 200,
+    "body": [
+      {
+        "id": "proj_default_loft",
+        "userId": "user_default",
+        "name": "Modern Loft Living Room",
+        "roomType": "Living Room",
+        "dimensions": {
+          "lengthFt": 18,
+          "widthFt": 14,
+          "ceilingHeightFt": 10,
+          "unit": "ft"
+        },
+        "budget": {
+          "totalCap": 2200,
+          "committed": 2720,
+          "currency": "USD"
+        },
+        "sketch": {
+          "uploaded": false,
+          "url": "",
+          "fileName": "",
+          "detectedFeatures": {
+            "walls": 4,
+            "doors": 1,
+            "windows": 2,
+            "usableAreaSqFt": 252,
+            "confidence": "High",
+            "aspectRatio": "1.28:1",
+            "orientation": "North-East"
+          }
+        },
+        "clearanceSettings": {
+          "egressPathInches": 36,
+          "doorArcSwing": true
+        },
+        "placedObjects": [
+          {
+            "id": "<ID>",
+            "catalogId": "furn_sofa_nocturne",
+            "name": "Nocturne Curved Sectional",
+            "category": "Seating",
+            "dimensions": {
+              "lengthIn": 96,
+              "widthIn": 42,
+              "heightIn": 31
+            },
+            "position": {
+              "x": 12.744926069297584,
+              "y": 12.25,
+              "z": 0
+            },
+            "rotation": 0,
+            "price": 1299,
+            "material": "Sand Bouclé",
+            "vendor": "CB2 Contract",
+            "anchorType": "L-ANCHOR",
+            "clearanceConflict": true,
+            "visible": true,
+            "conflictMessage": "only 28\" between Nocturne Curved Sectional and Aura Arc Luminaire — part of the room sits behind a sub-30\" pinch"
+          },
+          {
+            "id": "<ID>",
+            "catalogId": "furn_table_organic_teak",
+            "name": "Organic Teak Coffee Table",
+            "category": "Tables & Desks",
+            "dimensions": {
+              "lengthIn": 48,
+              "widthIn": 24,
+              "heightIn": 16
+            },
+            "position": {
+              "x": 8,
+              "y": 6.5,
+              "z": 0
+            },
+            "rotation": 0,
+            "price": 379,
+            "material": "Dark Walnut",
+            "vendor": "CB2 Contract",
+            "anchorType": "FREE",
+            "clearanceConflict": false,
+            "visible": true
+          },
+          {
+            "id": "<ID>",
+            "catalogId": "furn_credenza_aurelia",
+            "name": "Aurelia Media Credenza",
+            "category": "Storage & Media",
+            "dimensions": {
+              "lengthIn": 72,
+              "widthIn": 18,
+              "heightIn": 20
+            },
+            "position": {
+              "x": 9,
+              "y": 1.5,
+              "z": 0
+            },
+            "rotation": 0,
+            "price": 490,
+            "material": "Ebonized Ash",
+            "vendor": "Muuto Studio",
+            "anchorType": "WALL-ANCHOR",
+            "clearanceConflict": false,
+            "visible": true
+          },
+          {
+            "id": "<ID>",
+            "catalogId": "furn_luminaire_aura",
+            "name": "Aura Arc Luminaire",
+            "category": "Lighting",
+            "dimensions": {
+              "lengthIn": 28,
+              "widthIn": 28,
+              "heightIn": 78
+            },
+            "position": {
+              "x": 14,
+              "y": 6.5,
+              "z": 0
+            },
+            "rotation": 45,
+            "price": 240,
+            "material": "Satin Brass & Cast Iron",
+            "vendor": "Flos Studio",
+            "anchorType": "FREE",
+            "clearanceConflict": true,
+            "visible": true,
+            "conflictMessage": "only 28\" between Nocturne Curved Sectional and Aura Arc Luminaire — part of the room sits behind a sub-30\" pinch"
+          },
+          {
+            "id": "<ID>",
+            "catalogId": "furn_rug_basalt",
+            "name": "Basalt Micro-Ribbed Wool Rug",
+            "category": "Rugs & Textiles",
+            "dimensions": {
+              "lengthIn": 120,
+              "widthIn": 96,
+              "heightIn": 0.5
+            },
+            "position": {
+              "x": 8.5,
+              "y": 7,
+              "z": 0
+            },
+            "rotation": 0,
+            "price": 312,
+            "material": "Nordic Wool / Slate",
+            "vendor": "CB2 Contract",
+            "anchorType": "FLOOR",
+            "clearanceConflict": false,
+            "visible": true
+          }
+        ],
+        "materialSpecs": {
+          "activePlane": "SURF_FLR_01",
+          "activeMaterialId": "mat_wood_chevron_smoked_oak",
+          "materials": [
+            {
+              "id": "mat_wood_chevron_smoked_oak",
+              "plane": "SURF_FLR_01",
+              "name": "Chevron Smoked Oak",
+              "category": "Flooring",
+              "origin": "Black Forest, Germany",
+              "pricePerSqFt": 11.2,
+              "roughness": 0.35,
+              "normalDepthMm": 1.28,
+              "vocRating": "Ultra-Low",
+              "scratchIndex": "AC5 High-Com",
+              "slipResistance": "R10 / DCOF 0.52",
+              "color": "#4A3525"
+            },
+            {
+              "id": "mat_wall_microcement_slate",
+              "plane": "SURF_WALL_01",
+              "name": "Microcement Slate",
+              "category": "Wall Finish",
+              "origin": "Milan, Italy",
+              "pricePerSqFt": 9.5,
+              "roughness": 0.48,
+              "normalDepthMm": 0.85,
+              "vocRating": "A+ Pure",
+              "scratchIndex": "Heavy Traffic",
+              "slipResistance": "N/A",
+              "color": "#71757E"
+            }
+          ]
+        },
+        "lightingConfig": {
+          "solarOrientationDeg": 135.4,
+          "altitudeDeg": 42,
+          "directDni": 840,
+          "zenithLux": 38200,
+          "diurnalTime": "16:45",
+          "casementWidthFt": 10,
+          "casementHeightFt": 7,
+          "windowToWallRatio": 42.8,
+          "glazingSpec": "(SHGC) 0.38 Low-E",
+          "linenDrapeDiffusion": true,
+          "totalLumenBudget": 3800,
+          "allocatedLumens": 3450,
+          "daylightLumens": 1720,
+          "artificialLumens": 1730,
+          "activeLuminaires": [
+            {
+              "id": "<ID>",
+              "name": "Architectural Linear Cove",
+              "type": "Linear Cove",
+              "lumens": 950,
+              "cct": "2700K",
+              "powerWatts": 18,
+              "status": "Active"
+            },
+            {
+              "id": "<ID>",
+              "name": "Flos Style Brass Arc",
+              "type": "Task Arc",
+              "lumens": 480,
+              "cct": "3000K",
+              "powerWatts": 8,
+              "status": "Active"
+            },
+            {
+              "id": "<ID>",
+              "name": "Flush Gimbal Cans (3x)",
+              "type": "Spot Gimbal",
+              "lumens": 300,
+              "cct": "3000K",
+              "powerWatts": 12,
+              "status": "Active"
+            }
+          ],
+          "circadianScorePercent": 96
+        },
+        "createdAt": "<TS>",
+        "updatedAt": "<TS>"
+      }
+    ]
+  },
+  {
+    "name": "GET /api/projects/proj_default_loft",
+    "status": 200,
+    "expected": 200,
+    "body": {
+      "id": "proj_default_loft",
+      "userId": "user_default",
+      "name": "Modern Loft Living Room",
+      "roomType": "Living Room",
+      "dimensions": {
+        "lengthFt": 18,
+        "widthFt": 14,
+        "ceilingHeightFt": 10,
+        "unit": "ft"
+      },
+      "budget": {
+        "totalCap": 2200,
+        "committed": 2720,
+        "currency": "USD"
+      },
+      "sketch": {
+        "uploaded": false,
+        "url": "",
+        "fileName": "",
+        "detectedFeatures": {
+          "walls": 4,
+          "doors": 1,
+          "windows": 2,
+          "usableAreaSqFt": 252,
+          "confidence": "High",
+          "aspectRatio": "1.28:1",
+          "orientation": "North-East"
+        }
+      },
+      "clearanceSettings": {
+        "egressPathInches": 36,
+        "doorArcSwing": true
+      },
+      "placedObjects": [
+        {
+          "id": "<ID>",
+          "catalogId": "furn_sofa_nocturne",
+          "name": "Nocturne Curved Sectional",
+          "category": "Seating",
+          "dimensions": {
+            "lengthIn": 96,
+            "widthIn": 42,
+            "heightIn": 31
+          },
+          "position": {
+            "x": 12.744926069297584,
+            "y": 12.25,
+            "z": 0
+          },
+          "rotation": 0,
+          "price": 1299,
+          "material": "Sand Bouclé",
+          "vendor": "CB2 Contract",
+          "anchorType": "L-ANCHOR",
+          "clearanceConflict": true,
+          "visible": true,
+          "conflictMessage": "only 28\" between Nocturne Curved Sectional and Aura Arc Luminaire — part of the room sits behind a sub-30\" pinch"
+        },
+        {
+          "id": "<ID>",
+          "catalogId": "furn_table_organic_teak",
+          "name": "Organic Teak Coffee Table",
+          "category": "Tables & Desks",
+          "dimensions": {
+            "lengthIn": 48,
+            "widthIn": 24,
+            "heightIn": 16
+          },
+          "position": {
+            "x": 8,
+            "y": 6.5,
+            "z": 0
+          },
+          "rotation": 0,
+          "price": 379,
+          "material": "Dark Walnut",
+          "vendor": "CB2 Contract",
+          "anchorType": "FREE",
+          "clearanceConflict": false,
+          "visible": true
+        },
+        {
+          "id": "<ID>",
+          "catalogId": "furn_credenza_aurelia",
+          "name": "Aurelia Media Credenza",
+          "category": "Storage & Media",
+          "dimensions": {
+            "lengthIn": 72,
+            "widthIn": 18,
+            "heightIn": 20
+          },
+          "position": {
+            "x": 9,
+            "y": 1.5,
+            "z": 0
+          },
+          "rotation": 0,
+          "price": 490,
+          "material": "Ebonized Ash",
+          "vendor": "Muuto Studio",
+          "anchorType": "WALL-ANCHOR",
+          "clearanceConflict": false,
+          "visible": true
+        },
+        {
+          "id": "<ID>",
+          "catalogId": "furn_luminaire_aura",
+          "name": "Aura Arc Luminaire",
+          "category": "Lighting",
+          "dimensions": {
+            "lengthIn": 28,
+            "widthIn": 28,
+            "heightIn": 78
+          },
+          "position": {
+            "x": 14,
+            "y": 6.5,
+            "z": 0
+          },
+          "rotation": 45,
+          "price": 240,
+          "material": "Satin Brass & Cast Iron",
+          "vendor": "Flos Studio",
+          "anchorType": "FREE",
+          "clearanceConflict": true,
+          "visible": true,
+          "conflictMessage": "only 28\" between Nocturne Curved Sectional and Aura Arc Luminaire — part of the room sits behind a sub-30\" pinch"
+        },
+        {
+          "id": "<ID>",
+          "catalogId": "furn_rug_basalt",
+          "name": "Basalt Micro-Ribbed Wool Rug",
+          "category": "Rugs & Textiles",
+          "dimensions": {
+            "lengthIn": 120,
+            "widthIn": 96,
+            "heightIn": 0.5
+          },
+          "position": {
+            "x": 8.5,
+            "y": 7,
+            "z": 0
+          },
+          "rotation": 0,
+          "price": 312,
+          "material": "Nordic Wool / Slate",
+          "vendor": "CB2 Contract",
+          "anchorType": "FLOOR",
+          "clearanceConflict": false,
+          "visible": true
+        }
+      ],
+      "materialSpecs": {
+        "activePlane": "SURF_FLR_01",
+        "activeMaterialId": "mat_wood_chevron_smoked_oak",
+        "materials": [
+          {
+            "id": "mat_wood_chevron_smoked_oak",
+            "plane": "SURF_FLR_01",
+            "name": "Chevron Smoked Oak",
+            "category": "Flooring",
+            "origin": "Black Forest, Germany",
+            "pricePerSqFt": 11.2,
+            "roughness": 0.35,
+            "normalDepthMm": 1.28,
+            "vocRating": "Ultra-Low",
+            "scratchIndex": "AC5 High-Com",
+            "slipResistance": "R10 / DCOF 0.52",
+            "color": "#4A3525"
+          },
+          {
+            "id": "mat_wall_microcement_slate",
+            "plane": "SURF_WALL_01",
+            "name": "Microcement Slate",
+            "category": "Wall Finish",
+            "origin": "Milan, Italy",
+            "pricePerSqFt": 9.5,
+            "roughness": 0.48,
+            "normalDepthMm": 0.85,
+            "vocRating": "A+ Pure",
+            "scratchIndex": "Heavy Traffic",
+            "slipResistance": "N/A",
+            "color": "#71757E"
+          }
+        ]
+      },
+      "lightingConfig": {
+        "solarOrientationDeg": 135.4,
+        "altitudeDeg": 42,
+        "directDni": 840,
+        "zenithLux": 38200,
+        "diurnalTime": "16:45",
+        "casementWidthFt": 10,
+        "casementHeightFt": 7,
+        "windowToWallRatio": 42.8,
+        "glazingSpec": "(SHGC) 0.38 Low-E",
+        "linenDrapeDiffusion": true,
+        "totalLumenBudget": 3800,
+        "allocatedLumens": 3450,
+        "daylightLumens": 1720,
+        "artificialLumens": 1730,
+        "activeLuminaires": [
+          {
+            "id": "<ID>",
+            "name": "Architectural Linear Cove",
+            "type": "Linear Cove",
+            "lumens": 950,
+            "cct": "2700K",
+            "powerWatts": 18,
+            "status": "Active"
+          },
+          {
+            "id": "<ID>",
+            "name": "Flos Style Brass Arc",
+            "type": "Task Arc",
+            "lumens": 480,
+            "cct": "3000K",
+            "powerWatts": 8,
+            "status": "Active"
+          },
+          {
+            "id": "<ID>",
+            "name": "Flush Gimbal Cans (3x)",
+            "type": "Spot Gimbal",
+            "lumens": 300,
+            "cct": "3000K",
+            "powerWatts": 12,
+            "status": "Active"
+          }
+        ],
+        "circadianScorePercent": 96
+      },
+      "createdAt": "<TS>",
+      "updatedAt": "<TS>"
+    }
+  },
+  {
+    "name": "GET /api/projects/missing -> 404",
+    "status": 404,
+    "expected": 404,
+    "body": {
+      "error": "Project not found"
+    }
+  },
+  {
+    "name": "GET /api/auth/me",
+    "status": 200,
+    "expected": 200,
+    "body": {
+      "user": {
+        "id": "user_default",
+        "email": "ahananmondal2005m@gmail.com",
+        "name": "Ahana Mondal",
+        "role": "Lead Architect",
+        "studioName": "Mondal Atelier & Studio",
+        "preferredCurrency": "USD",
+        "preferredUnit": "ft"
+      }
+    }
+  },
+  {
+    "name": "POST /api/auth/login (existing user)",
+    "status": 200,
+    "expected": 200,
+    "body": {
+      "success": true,
+      "user": {
+        "id": "user_default",
+        "email": "ahananmondal2005m@gmail.com",
+        "name": "Ahana Mondal",
+        "role": "Lead Architect",
+        "studioName": "Mondal Atelier & Studio",
+        "preferredCurrency": "USD",
+        "preferredUnit": "ft"
+      }
+    }
+  },
+  {
+    "name": "POST /api/auth/login (new user auto-creates)",
+    "status": 200,
+    "expected": 200,
+    "body": {
+      "success": true,
+      "user": {
+        "id": "<ID>",
+        "email": "char-user@example.com",
+        "name": "char-user",
+        "role": "Interior Designer",
+        "studioName": "DrawMyRoom Studio Workspace",
+        "preferredCurrency": "USD",
+        "preferredUnit": "ft"
+      }
+    }
+  },
+  {
+    "name": "POST /api/auth/register",
+    "status": 200,
+    "expected": 200,
+    "body": {
+      "success": true,
+      "user": {
+        "id": "<ID>",
+        "name": "Char User",
+        "email": "char-reg@example.com",
+        "role": "Architectural Designer",
+        "studioName": "Char Studio",
+        "preferredCurrency": "USD",
+        "preferredUnit": "ft"
+      }
+    }
+  },
+  {
+    "name": "POST /api/projects (client id + partial body)",
+    "status": 201,
+    "expected": 201,
+    "body": {
+      "id": "proj_char_1",
+      "userId": "user_default",
+      "name": "Char Test Room",
+      "roomType": "Home Office",
+      "dimensions": {
+        "lengthFt": 12,
+        "widthFt": 10,
+        "ceilingHeightFt": 9,
+        "unit": "ft"
+      },
+      "budget": {
+        "totalCap": 5000,
+        "committed": 0,
+        "currency": "USD"
+      },
+      "sketch": {
+        "uploaded": false,
+        "url": "",
+        "fileName": "",
+        "detectedFeatures": {
+          "walls": 4,
+          "doors": 1,
+          "windows": 2,
+          "usableAreaSqFt": 252,
+          "confidence": "High",
+          "aspectRatio": "1.28:1",
+          "orientation": "North-East"
+        }
+      },
+      "clearanceSettings": {
+        "egressPathInches": 36,
+        "doorArcSwing": true
+      },
+      "placedObjects": [],
+      "materialSpecs": {
+        "activePlane": "SURF_FLR_01",
+        "activeMaterialId": "mat_wood_chevron_smoked_oak",
+        "materials": [
+          {
+            "id": "mat_wood_chevron_smoked_oak",
+            "plane": "SURF_FLR_01",
+            "name": "Chevron Smoked Oak",
+            "category": "Flooring",
+            "origin": "Black Forest, Germany",
+            "pricePerSqFt": 11.2,
+            "roughness": 0.35,
+            "normalDepthMm": 1.28,
+            "vocRating": "Ultra-Low",
+            "scratchIndex": "AC5 High-Com",
+            "slipResistance": "R10 / DCOF 0.52",
+            "color": "#4A3525"
+          },
+          {
+            "id": "mat_wall_microcement_slate",
+            "plane": "SURF_WALL_01",
+            "name": "Microcement Slate",
+            "category": "Wall Finish",
+            "origin": "Milan, Italy",
+            "pricePerSqFt": 9.5,
+            "roughness": 0.48,
+            "normalDepthMm": 0.85,
+            "vocRating": "A+ Pure",
+            "scratchIndex": "Heavy Traffic",
+            "slipResistance": "N/A",
+            "color": "#71757E"
+          }
+        ]
+      },
+      "lightingConfig": {
+        "solarOrientationDeg": 135.4,
+        "altitudeDeg": 42,
+        "directDni": 840,
+        "zenithLux": 38200,
+        "diurnalTime": "16:45",
+        "casementWidthFt": 10,
+        "casementHeightFt": 7,
+        "windowToWallRatio": 42.8,
+        "glazingSpec": "(SHGC) 0.38 Low-E",
+        "linenDrapeDiffusion": true,
+        "totalLumenBudget": 3800,
+        "allocatedLumens": 3450,
+        "daylightLumens": 1720,
+        "artificialLumens": 1730,
+        "activeLuminaires": [
+          {
+            "id": "<ID>",
+            "name": "Architectural Linear Cove",
+            "type": "Linear Cove",
+            "lumens": 950,
+            "cct": "2700K",
+            "powerWatts": 18,
+            "status": "Active"
+          },
+          {
+            "id": "<ID>",
+            "name": "Flos Style Brass Arc",
+            "type": "Task Arc",
+            "lumens": 480,
+            "cct": "3000K",
+            "powerWatts": 8,
+            "status": "Active"
+          },
+          {
+            "id": "<ID>",
+            "name": "Flush Gimbal Cans (3x)",
+            "type": "Spot Gimbal",
+            "lumens": 300,
+            "cct": "3000K",
+            "powerWatts": 12,
+            "status": "Active"
+          }
+        ],
+        "circadianScorePercent": 96
+      },
+      "createdAt": "<TS>",
+      "updatedAt": "<TS>"
+    }
+  },
+  {
+    "name": "GET /api/projects/proj_char_1",
+    "status": 200,
+    "expected": 200,
+    "body": {
+      "id": "proj_char_1",
+      "userId": "user_default",
+      "name": "Char Test Room",
+      "roomType": "Home Office",
+      "dimensions": {
+        "lengthFt": 12,
+        "widthFt": 10,
+        "ceilingHeightFt": 9,
+        "unit": "ft"
+      },
+      "budget": {
+        "totalCap": 5000,
+        "committed": 0,
+        "currency": "USD"
+      },
+      "sketch": {
+        "uploaded": false,
+        "url": "",
+        "fileName": "",
+        "detectedFeatures": {
+          "walls": 4,
+          "doors": 1,
+          "windows": 2,
+          "usableAreaSqFt": 252,
+          "confidence": "High",
+          "aspectRatio": "1.28:1",
+          "orientation": "North-East"
+        }
+      },
+      "clearanceSettings": {
+        "egressPathInches": 36,
+        "doorArcSwing": true
+      },
+      "placedObjects": [],
+      "materialSpecs": {
+        "activePlane": "SURF_FLR_01",
+        "activeMaterialId": "mat_wood_chevron_smoked_oak",
+        "materials": [
+          {
+            "id": "mat_wood_chevron_smoked_oak",
+            "plane": "SURF_FLR_01",
+            "name": "Chevron Smoked Oak",
+            "category": "Flooring",
+            "origin": "Black Forest, Germany",
+            "pricePerSqFt": 11.2,
+            "roughness": 0.35,
+            "normalDepthMm": 1.28,
+            "vocRating": "Ultra-Low",
+            "scratchIndex": "AC5 High-Com",
+            "slipResistance": "R10 / DCOF 0.52",
+            "color": "#4A3525"
+          },
+          {
+            "id": "mat_wall_microcement_slate",
+            "plane": "SURF_WALL_01",
+            "name": "Microcement Slate",
+            "category": "Wall Finish",
+            "origin": "Milan, Italy",
+            "pricePerSqFt": 9.5,
+            "roughness": 0.48,
+            "normalDepthMm": 0.85,
+            "vocRating": "A+ Pure",
+            "scratchIndex": "Heavy Traffic",
+            "slipResistance": "N/A",
+            "color": "#71757E"
+          }
+        ]
+      },
+      "lightingConfig": {
+        "solarOrientationDeg": 135.4,
+        "altitudeDeg": 42,
+        "directDni": 840,
+        "zenithLux": 38200,
+        "diurnalTime": "16:45",
+        "casementWidthFt": 10,
+        "casementHeightFt": 7,
+        "windowToWallRatio": 42.8,
+        "glazingSpec": "(SHGC) 0.38 Low-E",
+        "linenDrapeDiffusion": true,
+        "totalLumenBudget": 3800,
+        "allocatedLumens": 3450,
+        "daylightLumens": 1720,
+        "artificialLumens": 1730,
+        "activeLuminaires": [
+          {
+            "id": "<ID>",
+            "name": "Architectural Linear Cove",
+            "type": "Linear Cove",
+            "lumens": 950,
+            "cct": "2700K",
+            "powerWatts": 18,
+            "status": "Active"
+          },
+          {
+            "id": "<ID>",
+            "name": "Flos Style Brass Arc",
+            "type": "Task Arc",
+            "lumens": 480,
+            "cct": "3000K",
+            "powerWatts": 8,
+            "status": "Active"
+          },
+          {
+            "id": "<ID>",
+            "name": "Flush Gimbal Cans (3x)",
+            "type": "Spot Gimbal",
+            "lumens": 300,
+            "cct": "3000K",
+            "powerWatts": 12,
+            "status": "Active"
+          }
+        ],
+        "circadianScorePercent": 96
+      },
+      "createdAt": "<TS>",
+      "updatedAt": "<TS>"
+    }
+  },
+  {
+    "name": "PUT /api/projects/proj_char_1 (merge)",
+    "status": 200,
+    "expected": 200,
+    "body": {
+      "id": "proj_char_1",
+      "userId": "user_default",
+      "name": "Char Test Room Renamed",
+      "roomType": "Primary Bedroom",
+      "dimensions": {
+        "lengthFt": 12,
+        "widthFt": 10,
+        "ceilingHeightFt": 9,
+        "unit": "ft"
+      },
+      "budget": {
+        "totalCap": 5000,
+        "committed": 0,
+        "currency": "USD"
+      },
+      "sketch": {
+        "uploaded": false,
+        "url": "",
+        "fileName": "",
+        "detectedFeatures": {
+          "walls": 4,
+          "doors": 1,
+          "windows": 2,
+          "usableAreaSqFt": 252,
+          "confidence": "High",
+          "aspectRatio": "1.28:1",
+          "orientation": "North-East"
+        }
+      },
+      "clearanceSettings": {
+        "egressPathInches": 36,
+        "doorArcSwing": true
+      },
+      "placedObjects": [],
+      "materialSpecs": {
+        "activePlane": "SURF_FLR_01",
+        "activeMaterialId": "mat_wood_chevron_smoked_oak",
+        "materials": [
+          {
+            "id": "mat_wood_chevron_smoked_oak",
+            "plane": "SURF_FLR_01",
+            "name": "Chevron Smoked Oak",
+            "category": "Flooring",
+            "origin": "Black Forest, Germany",
+            "pricePerSqFt": 11.2,
+            "roughness": 0.35,
+            "normalDepthMm": 1.28,
+            "vocRating": "Ultra-Low",
+            "scratchIndex": "AC5 High-Com",
+            "slipResistance": "R10 / DCOF 0.52",
+            "color": "#4A3525"
+          },
+          {
+            "id": "mat_wall_microcement_slate",
+            "plane": "SURF_WALL_01",
+            "name": "Microcement Slate",
+            "category": "Wall Finish",
+            "origin": "Milan, Italy",
+            "pricePerSqFt": 9.5,
+            "roughness": 0.48,
+            "normalDepthMm": 0.85,
+            "vocRating": "A+ Pure",
+            "scratchIndex": "Heavy Traffic",
+            "slipResistance": "N/A",
+            "color": "#71757E"
+          }
+        ]
+      },
+      "lightingConfig": {
+        "solarOrientationDeg": 135.4,
+        "altitudeDeg": 42,
+        "directDni": 840,
+        "zenithLux": 38200,
+        "diurnalTime": "16:45",
+        "casementWidthFt": 10,
+        "casementHeightFt": 7,
+        "windowToWallRatio": 42.8,
+        "glazingSpec": "(SHGC) 0.38 Low-E",
+        "linenDrapeDiffusion": true,
+        "totalLumenBudget": 3800,
+        "allocatedLumens": 3450,
+        "daylightLumens": 1720,
+        "artificialLumens": 1730,
+        "activeLuminaires": [
+          {
+            "id": "<ID>",
+            "name": "Architectural Linear Cove",
+            "type": "Linear Cove",
+            "lumens": 950,
+            "cct": "2700K",
+            "powerWatts": 18,
+            "status": "Active"
+          },
+          {
+            "id": "<ID>",
+            "name": "Flos Style Brass Arc",
+            "type": "Task Arc",
+            "lumens": 480,
+            "cct": "3000K",
+            "powerWatts": 8,
+            "status": "Active"
+          },
+          {
+            "id": "<ID>",
+            "name": "Flush Gimbal Cans (3x)",
+            "type": "Spot Gimbal",
+            "lumens": 300,
+            "cct": "3000K",
+            "powerWatts": 12,
+            "status": "Active"
+          }
+        ],
+        "circadianScorePercent": 96
+      },
+      "createdAt": "<TS>",
+      "updatedAt": "<TS>"
+    }
+  },
+  {
+    "name": "PUT /api/projects/missing -> 404",
+    "status": 404,
+    "expected": 404,
+    "body": {
+      "error": "Project not found"
+    }
+  },
+  {
+    "name": "GET /api/designs/proj_default_loft",
+    "status": 200,
+    "expected": 200,
+    "body": []
+  },
+  {
+    "name": "POST /api/designs",
+    "status": 201,
+    "expected": 201,
+    "body": {
+      "id": "<ID>",
+      "projectId": "proj_default_loft",
+      "name": "Char Snapshot",
+      "style": "Japandi Warm",
+      "totalCost": 1919,
+      "piecesCount": 2,
+      "snapshotData": {
+        "dimensions": {
+          "lengthFt": 18,
+          "widthFt": 14,
+          "ceilingHeightFt": 10,
+          "unit": "ft"
+        },
+        "placedObjects": [],
+        "materials": [],
+        "lightingConfig": {}
+      },
+      "timestamp": "<TS>"
+    }
+  },
+  {
+    "name": "GET /api/designs/proj_default_loft (after save)",
+    "status": 200,
+    "expected": 200,
+    "body": [
+      {
+        "id": "<ID>",
+        "projectId": "proj_default_loft",
+        "name": "Char Snapshot",
+        "style": "Japandi Warm",
+        "totalCost": 1919,
+        "piecesCount": 2,
+        "snapshotData": {
+          "dimensions": {
+            "lengthFt": 18,
+            "widthFt": 14,
+            "ceilingHeightFt": 10,
+            "unit": "ft"
+          },
+          "placedObjects": [],
+          "materials": [],
+          "lightingConfig": {}
+        },
+        "timestamp": "<TS>"
+      }
+    ]
+  },
+  {
+    "name": "DELETE /api/designs/:id",
+    "status": 200,
+    "expected": 200,
+    "body": {
+      "success": true
+    }
+  },
+  {
+    "name": "DELETE /api/projects/proj_char_1",
+    "status": 200,
+    "expected": 200,
+    "body": {
+      "success": true
+    }
+  },
+  {
+    "name": "GET /api/projects/proj_char_1 -> 404",
+    "status": 404,
+    "expected": 404,
+    "body": {
+      "error": "Project not found"
+    }
+  },
+  {
+    "name": "POST /api/inquiries",
+    "status": 201,
+    "expected": 201,
+    "body": {
+      "success": true,
+      "inquiry": {
+        "id": "<ID>",
+        "name": "Char User",
+        "email": "char@example.com",
+        "designerId": "des_priya_sharma",
+        "message": "hello",
+        "createdAt": "<TS>"
+      }
+    }
+  },
+  {
+    "name": "POST /api/layout/analyze-sketch",
+    "status": 200,
+    "expected": 200,
+    "body": {
+      "success": true,
+      "engine": "local-roomsolver",
+      "analysis": {
+        "estimatedLengthFt": 18,
+        "estimatedWidthFt": 14,
+        "estimatedCeilingHeightFt": 10,
+        "usableFloorAreaSqFt": 252,
+        "volumeCuFt": 2520,
+        "detectedWalls": 4,
+        "detectedDoors": [
+          {
+            "position": "South-East Wall",
+            "swing": "Inward 90°",
+            "clearanceInches": 36
+          }
+        ],
+        "detectedWindows": [
+          {
+            "position": "North Wall",
+            "widthFt": 10,
+            "heightFt": 7,
+            "orientation": "Direct Solar Exposure"
+          }
+        ],
+        "suggestedRoomType": "Primary Bedroom / Studio",
+        "spatialNotes": "Orthogonal bounding envelope resolved at 18 × 14 ft (1.29:1 aspect) with perimeter fenestration assumed on the north elevation. The local layout engine keeps the primary 36-inch egress corridor unobstructed from the south-east entry door across every staged arrangement.",
+        "disclaimer": "Extracted by the local geometric layout engine (roomsolver port). Homeowners may adjust all measurements in the Spatial Envelope panel."
+      }
+    }
+  },
+  {
+    "name": "POST /api/layout/stage-room (Living Room / $2200 / Japandi Warm)",
+    "status": 200,
+    "expected": 200,
+    "body": {
+      "success": true,
+      "engine": "local-roomsolver",
+      "stagingPlan": {
+        "styleName": "Japandi Warm",
+        "fitScore": 76,
+        "conceptSummary": "Japandi Warm plan staged entirely offline by the local roomsolver engine: 2 pieces at 18' × 14' — layout usability 76/100 with 1 clearance notes, 1919 of 2200 committed against the spatial cost cap.",
+        "recommendedLayout": [
+          {
+            "item": "Nocturne Curved Sectional",
+            "placement": "north wall, 72\" from the origin corner",
+            "reason": "clearance zones and door swing verified feasible"
+          },
+          {
+            "item": "Tivoli Honed Travertine Plinth",
+            "placement": "floating ~16\" in front of the primary seating anchor",
+            "reason": "clearance zones and door swing verified feasible"
+          }
+        ],
+        "colorPalette": [
+          "#D9C5A1",
+          "#6B5B4E",
+          "#2E2A26",
+          "#A6977F",
+          "#8C7A5B"
+        ],
+        "materialRecommendations": "Sand Bouclé & Kiln-Dried Hardwood paired with Natural Roman Travertine.",
+        "placements": [
+          {
+            "id": "<ID>",
+            "catalogId": "furn_sofa_nocturne_cat",
+            "name": "Nocturne Curved Sectional",
+            "category": "All Seating",
+            "dimensions": {
+              "lengthIn": 96,
+              "widthIn": 42,
+              "heightIn": 31
+            },
+            "position": {
+              "x": 10,
+              "y": 12.25,
+              "z": 0
+            },
+            "rotation": 180,
+            "price": 1299,
+            "material": "Sand Bouclé & Kiln-Dried Hardwood",
+            "vendor": "CB2 Contract",
+            "anchorType": "WALL-ANCHOR",
+            "visible": true,
+            "modelType": "sofa"
+          },
+          {
+            "id": "<ID>",
+            "catalogId": "furn_table_tivoli",
+            "name": "Tivoli Honed Travertine Plinth",
+            "category": "Tables & Desks",
+            "dimensions": {
+              "lengthIn": 48,
+              "widthIn": 36,
+              "heightIn": 16
+            },
+            "position": {
+              "x": 10,
+              "y": 7.5,
+              "z": 0
+            },
+            "rotation": 0,
+            "price": 620,
+            "material": "Natural Roman Travertine",
+            "vendor": "Hay Copenhagen",
+            "anchorType": "FREE",
+            "visible": true,
+            "modelType": "table"
+          }
+        ],
+        "skipped": [
+          {
+            "name": "Doze Lounge Armchair",
+            "reason": "exceeds spatial cost cap (1150 vs 281 remaining)"
+          },
+          {
+            "name": "Aurelia Media Credenza",
+            "reason": "exceeds spatial cost cap (490 vs 281 remaining)"
+          },
+          {
+            "name": "Post Floor Column Luminaire",
+            "reason": "exceeds spatial cost cap (450 vs 281 remaining)"
+          },
+          {
+            "name": "Ribbed Bouclé Wool Area Rug",
+            "reason": "exceeds spatial cost cap (780 vs 281 remaining)"
+          }
+        ],
+        "solverNotes": [
+          "beam search: 1 wall pieces solved (beam=160, step=12\", anchor-capped diversity)",
+          "Nocturne Curved Sectional: must squeeze past furniture to reach the seating approach"
+        ]
+      }
+    }
+  },
+  {
+    "name": "POST /api/layout/stage-room (tiny 8x6 degrades gracefully)",
+    "status": 200,
+    "expected": 200,
+    "body": {
+      "success": true,
+      "engine": "local-roomsolver",
+      "stagingPlan": {
+        "styleName": "Modern Minimalist",
+        "fitScore": 30,
+        "conceptSummary": "Modern Minimalist plan staged entirely offline by the local roomsolver engine: 1 pieces at 8' × 6' — layout usability 30/100 with 1 clearance notes, 450 of 5000 committed against the spatial cost cap.",
+        "recommendedLayout": [
+          {
+            "item": "Post Floor Column Luminaire",
+            "placement": "free corner with maximum clearance",
+            "reason": "clearance zones and door swing verified feasible"
+          }
+        ],
+        "colorPalette": [
+          "#1C212B",
+          "#E5855E",
+          "#D9C5B2",
+          "#4A3525",
+          "#8E9AAF"
+        ],
+        "materialRecommendations": "Anodized Aluminum & Opal Acrylic.",
+        "placements": [
+          {
+            "id": "<ID>",
+            "catalogId": "furn_lum_post",
+            "name": "Post Floor Column Luminaire",
+            "category": "Lighting (Architectural)",
+            "dimensions": {
+              "lengthIn": 14,
+              "widthIn": 14,
+              "heightIn": 60
+            },
+            "position": {
+              "x": 5.75,
+              "y": 3.75,
+              "z": 0
+            },
+            "rotation": 0,
+            "price": 450,
+            "material": "Anodized Aluminum & Opal Acrylic",
+            "vendor": "Muuto Studio",
+            "anchorType": "FREE",
+            "visible": true,
+            "modelType": "lamp"
+          }
+        ],
+        "skipped": [
+          {
+            "name": "Doze Lounge Armchair",
+            "reason": "no feasible wall placement left in this room (spatially too tight)"
+          },
+          {
+            "name": "Aurelia Media Credenza",
+            "reason": "no feasible wall placement left in this room (spatially too tight)"
+          },
+          {
+            "name": "Nocturne Curved Sectional",
+            "reason": "no feasible wall placement left in this room (spatially too tight)"
+          },
+          {
+            "name": "Tivoli Honed Travertine Plinth",
+            "reason": "no clear floor space for a center placement"
+          },
+          {
+            "name": "Ribbed Bouclé Wool Area Rug",
+            "reason": "no clear floor space for a center placement"
+          }
+        ],
+        "solverNotes": [
+          "beam search: 3 wall pieces solved (beam=160, step=12\", anchor-capped diversity)",
+          "Doze Lounge Armchair dropped: No feasible spot for Nocturne Curved Sectional given the pieces already placed. Room may be too small or too full.",
+          "Aurelia Media Credenza dropped: No feasible spot for Nocturne Curved Sectional given the pieces already placed. Room may be too small or too full.",
+          "Nocturne Curved Sectional dropped: No feasible spot for Nocturne Curved Sectional given the pieces already placed. Room may be too small or too full.",
+          "You can't get into the room without squeezing"
+        ]
+      }
+    }
+  },
+  {
+    "name": "POST /api/layout/balance-lighting",
+    "status": 200,
+    "expected": 200,
+    "body": {
+      "success": true,
+      "engine": "local-photometrics",
+      "lightingBalance": {
+        "adjustedTargetLumens": 3800,
+        "circadianScore": 90,
+        "circadianStatus": "Evening Compliant",
+        "melanopicSuppressionLux": "72 lx (above the 65 lx evening wind-down threshold — warm-dim advised)",
+        "cctRecommendation": "2700K Warm Dim",
+        "actionSummary": "Rebalanced 3 luminaires to 3,800 lm (0% of the target supplied by daylight at 21:30); melanopic load held at 72 lx with warm-dim CCT to protect melatonin release.",
+        "optimizedFixtures": [
+          {
+            "name": "Architectural Linear Cove",
+            "adjustedLumens": 1754,
+            "dimLevel": "100%"
+          },
+          {
+            "name": "Flos Style Brass Arc",
+            "adjustedLumens": 1169,
+            "dimLevel": "100%"
+          },
+          {
+            "name": "Flush Gimbal Cans (3x)",
+            "adjustedLumens": 877,
+            "dimLevel": "100%"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "name": "POST /api/layout/value-engineer",
+    "status": 200,
+    "expected": 200,
+    "body": {
+      "success": true,
+      "engine": "local-value-engineer",
+      "recommendation": {
+        "activeAlternative": "Tivoli Honed Travertine Plinth substituted for Noguchi Rudder Coffee Table",
+        "savingsAmount": 140,
+        "leadTimeAdvantage": "Comparable lead time",
+        "spatialImpact": "Footprint 48\" × 36\" vs 48\" × 24\" — egress and clearance zones preserved",
+        "tradeDiscountApplied": "15% B2B Standard Applied",
+        "alternatives": [
+          {
+            "current": "Noguchi Rudder Coffee Table",
+            "alternative": "Tivoli Honed Travertine Plinth",
+            "savings": 140,
+            "note": "Same-category swap with a ~82% footprint match — clearance solution unaffected."
+          }
+        ],
+        "newTotal": 620
+      }
+    }
+  },
+  {
+    "name": "POST /api/gemini/stage-room -> 404 (removed route)",
+    "status": 404,
+    "expected": 404,
+    "body": null
+  }
+]
