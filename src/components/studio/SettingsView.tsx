@@ -1,15 +1,6 @@
 import React, { useState } from 'react';
 import { Project, CurrencyCode, DimensionUnit, UserProfile } from '../../types';
-import {
-  Settings,
-  DollarSign,
-  Ruler,
-  User,
-  Shield,
-  Save,
-  Check,
-  Building,
-} from 'lucide-react';
+import { Settings, DollarSign, User, Save, Check } from 'lucide-react';
 
 interface SettingsViewProps {
   project: Project;

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Project, UserProfile } from '../../types';
+import { currencySymbolFor } from '../../utils/format';
 import {
   Box,
   Layers,
@@ -48,7 +49,7 @@ export const StudioLayout: React.FC<StudioLayoutProps> = ({
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const currencySymbol = activeProject.budget.currency === 'INR' ? '₹' : '$';
+  const currencySymbol = currencySymbolFor(activeProject.budget.currency);
   const committedPercent = Math.min(
     100,
     Math.round((activeProject.budget.committed / activeProject.budget.totalCap) * 100)

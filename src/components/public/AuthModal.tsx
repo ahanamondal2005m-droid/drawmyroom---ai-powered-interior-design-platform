@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { UserProfile } from '../../types';
 import { Lock, Mail, User, Building, X, ArrowRight } from 'lucide-react';
+import * as api from '../../services/api';
 
 interface AuthModalProps {
   isOpen: boolean;
@@ -30,20 +31,18 @@ export const AuthModal: React.FC<AuthModalProps> = ({
     setLoading(true);
     setError(null);
 
-    const endpoint = mode === 'login' ? '/api/auth/login' : '/api/auth/register';
-    const payload =
-      mode === 'login'
-        ? { email, password }
-        : { email, name, studioName, password, preferredCurrency: 'USD' };
-
     try {
-      const res = await fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
+      const data =
+        mode === 'login'
+          ? await api.login({ email, password })
+          : await api.register({
+              email,
+              name,
+              studioName,
+              password,
+              preferredCurrency: 'USD',
+            });
 
-      const data = await res.json();
       if (data.success && data.user) {
         onAuthSuccess(data.user);
         onClose();

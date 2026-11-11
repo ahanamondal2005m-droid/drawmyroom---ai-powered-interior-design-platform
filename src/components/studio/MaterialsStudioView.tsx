@@ -1,18 +1,14 @@
 import React, { useState } from 'react';
 import { Project, MaterialItem } from '../../types';
+import { currencySymbolFor } from '../../utils/format';
 import { MATERIALS_CATALOG } from '../../data/mockData';
 import {
-  Sparkles,
   Layers,
   Search,
-  CheckCircle,
   FileDown,
   RotateCcw,
   Box,
-  Eye,
-  Sliders,
   Sun,
-  ShieldCheck,
   Check,
   ArrowRight,
   UploadCloud,
@@ -39,7 +35,7 @@ export const MaterialsStudioView: React.FC<MaterialsStudioViewProps> = ({
   const [wasteFactorPercent, setWasteFactorPercent] = useState<number>(10);
   const [appliedFeedback, setAppliedFeedback] = useState(false);
 
-  const currencySymbol = project.budget.currency === 'INR' ? '₹' : '$';
+  const currencySymbol = currencySymbolFor(project.budget.currency);
 
   // Usable floor area calculation
   const floorAreaSqFt = project.dimensions.lengthFt * project.dimensions.widthFt;

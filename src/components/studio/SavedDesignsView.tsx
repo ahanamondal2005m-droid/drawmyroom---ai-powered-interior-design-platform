@@ -1,16 +1,7 @@
 import React, { useState } from 'react';
 import { Project, DesignVariation } from '../../types';
-import {
-  Bookmark,
-  Check,
-  RotateCcw,
-  Trash2,
-  Layers,
-  ArrowRight,
-  Eye,
-  SlidersHorizontal,
-  Plus,
-} from 'lucide-react';
+import { currencySymbolFor } from '../../utils/format';
+import { Bookmark, RotateCcw, Trash2, SlidersHorizontal } from 'lucide-react';
 
 interface SavedDesignsViewProps {
   project: Project;
@@ -73,7 +64,7 @@ export const SavedDesignsView: React.FC<SavedDesignsViewProps> = ({
 
   const [newVarName, setNewVarName] = useState('');
   const [comparingIds, setComparingIds] = useState<string[]>(['var_1', 'var_2']);
-  const currencySymbol = project.budget.currency === 'INR' ? '₹' : '$';
+  const currencySymbol = currencySymbolFor(project.budget.currency);
 
   const handleSaveCurrent = () => {
     const name = newVarName.trim() || `Design Variation ${variations.length + 1}`;

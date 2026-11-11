@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { PlacedObject, RoomDimensions } from '../../types';
-import { AlertTriangle, Check, Lock, Unlock, Grid, Move, RotateCw, Trash2, Eye } from 'lucide-react';
+import { AlertTriangle, Lock, Unlock, Grid, Move, RotateCw } from 'lucide-react';
 import { computeClearanceConflicts } from '../../../local-engine/clearance';
 
 interface Room2DCanvasProps {

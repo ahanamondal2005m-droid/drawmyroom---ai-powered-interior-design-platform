@@ -1,19 +1,9 @@
 import React, { useState } from 'react';
 import { Project, DesignerProfile } from '../../types';
+import { currencySymbolFor } from '../../utils/format';
 import { DESIGNER_PROFILES } from '../../data/mockData';
-import {
-  Users,
-  Star,
-  CheckCircle,
-  MapPin,
-  Clock,
-  Send,
-  MessageSquare,
-  Sparkles,
-  ArrowRight,
-  ExternalLink,
-  DollarSign,
-} from 'lucide-react';
+import { Users, Star, CheckCircle, MapPin, Clock, Send, MessageSquare } from 'lucide-react';
+import * as api from '../../services/api';
 
 interface DesignerConnectViewProps {
   project: Project;
@@ -27,7 +17,7 @@ export const DesignerConnectView: React.FC<DesignerConnectViewProps> = ({ projec
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
-  const currencySymbol = project.budget.currency === 'INR' ? '₹' : '$';
+  const currencySymbol = currencySymbolFor(project.budget.currency);
 
   const handleSubmitInquiry = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,20 +25,16 @@ export const DesignerConnectView: React.FC<DesignerConnectViewProps> = ({ projec
 
     setIsSubmitting(true);
     try {
-      const res = await fetch('/api/inquiries', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          designerId: selectedDesigner.id,
-          designerName: selectedDesigner.name,
-          clientName: inquiryName,
-          clientEmail: inquiryEmail,
-          projectName: project.name,
-          roomType: project.roomType,
-          dimensions: project.dimensions,
-          budgetCap: project.budget.totalCap,
-          notes: inquiryNotes,
-        }),
+      const res = await api.sendInquiry({
+        designerId: selectedDesigner.id,
+        designerName: selectedDesigner.name,
+        clientName: inquiryName,
+        clientEmail: inquiryEmail,
+        projectName: project.name,
+        roomType: project.roomType,
+        dimensions: project.dimensions,
+        budgetCap: project.budget.totalCap,
+        notes: inquiryNotes,
       });
 
       if (res.ok) {

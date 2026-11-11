@@ -1,17 +1,7 @@
 import React, { useState } from 'react';
 import { Project, RoomDimensions } from '../../types';
-import {
-  FolderPlus,
-  Trash2,
-  Copy,
-  Edit,
-  Box,
-  Check,
-  Calendar,
-  Layers,
-  ArrowRight,
-  Plus,
-} from 'lucide-react';
+import { currencySymbolFor } from '../../utils/format';
+import { FolderPlus, Trash2, Box, Check, Plus } from 'lucide-react';
 
 interface ProjectsViewProps {
   projects: Project[];
@@ -88,7 +78,7 @@ export const ProjectsView: React.FC<ProjectsViewProps> = ({
         {projects.map((proj) => {
           const isActive = proj.id === activeProjectId;
           const area = proj.dimensions.lengthFt * proj.dimensions.widthFt;
-          const currencySymbol = proj.budget.currency === 'INR' ? '₹' : '$';
+          const currencySymbol = currencySymbolFor(proj.budget.currency);
 
           return (
             <div

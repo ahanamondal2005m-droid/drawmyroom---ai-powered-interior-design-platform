@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
 import { Project } from '../../types';
+import { currencySymbolFor } from '../../utils/format';
 import {
   FileText,
   ShieldCheck,
-  Truck,
   Clock,
   Search,
   Filter,
-  DollarSign,
-  Download,
   Sparkles,
-  ArrowRight,
   Send,
   Layers,
   CheckCircle,
@@ -36,7 +33,7 @@ export const EstimatesBoQView: React.FC<EstimatesBoQViewProps> = ({
   const [valueEngineeredActive, setValueEngineeredActive] = useState(true);
   const [sortOrder, setSortOrder] = useState<'high' | 'low'>('high');
 
-  const currencySymbol = project.budget.currency === 'INR' ? '₹' : '$';
+  const currencySymbol = currencySymbolFor(project.budget.currency);
 
   // Local value engineering: cheaper same-footprint catalog substitutions,
   // computed in-process by the local engine — deterministic, no API.

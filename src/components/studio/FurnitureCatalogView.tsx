@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import { Project, CatalogItem } from '../../types';
+import { currencySymbolFor } from '../../utils/format';
 import { CATALOG_ITEMS } from '../../data/mockData';
 import {
   Search,
   CheckCircle,
-  Sliders,
   Check,
   Box,
-  Layers,
   ArrowRight,
   Filter,
-  Sparkles,
   Info,
 } from 'lucide-react';
 
@@ -35,7 +33,7 @@ export const FurnitureCatalogView: React.FC<FurnitureCatalogViewProps> = ({
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [stagedItems, setStagedItems] = useState<CatalogItem[]>([]);
 
-  const currencySymbol = project.budget.currency === 'INR' ? '₹' : '$';
+  const currencySymbol = currencySymbolFor(project.budget.currency);
 
   const categories = [
     { name: 'All Seating', count: 42 },

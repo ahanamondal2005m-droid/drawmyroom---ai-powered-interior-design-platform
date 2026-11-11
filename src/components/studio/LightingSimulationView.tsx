@@ -1,19 +1,7 @@
 import React, { useState } from 'react';
 import { Project, LightingConfig, LuminaireFixture } from '../../types';
-import {
-  Sun,
-  Moon,
-  Sparkles,
-  Compass,
-  Sliders,
-  CheckCircle,
-  Eye,
-  Maximize2,
-  Wand2,
-  Layers,
-  Activity,
-  Zap,
-} from 'lucide-react';
+import { Sun, Moon, Compass, Wand2 } from 'lucide-react';
+import * as api from '../../services/api';
 
 interface LightingSimulationViewProps {
   project: Project;
@@ -76,18 +64,13 @@ export const LightingSimulationView: React.FC<LightingSimulationViewProps> = ({
     setAiBalanceFeedback(null);
 
     try {
-      const res = await fetch('/api/layout/balance-lighting', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          timeOfDay: cfg.diurnalTime,
-          targetLumens: cfg.totalLumenBudget,
-          currentFixtures: cfg.activeLuminaires,
-          roomSqFt: project.dimensions.lengthFt * project.dimensions.widthFt,
-        }),
+      const data = await api.balanceLighting({
+        timeOfDay: cfg.diurnalTime,
+        targetLumens: cfg.totalLumenBudget,
+        currentFixtures: cfg.activeLuminaires,
+        roomSqFt: project.dimensions.lengthFt * project.dimensions.widthFt,
       });
 
-      const data = await res.json();
       if (data.success && data.lightingBalance) {
         const b = data.lightingBalance;
         setAiBalanceFeedback(b.actionSummary);

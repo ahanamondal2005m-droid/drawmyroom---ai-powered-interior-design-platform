@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { PlacedObject, RoomDimensions, MaterialItem, LightingConfig } from '../../types';
-import { Camera, Eye, RotateCw, ZoomIn, ZoomOut, Maximize2, Sun, Moon } from 'lucide-react';
+import { Camera, Eye, RotateCw, ZoomIn, ZoomOut, Maximize2, Sun } from 'lucide-react';
 
 interface Room3DCanvasProps {
   dimensions: RoomDimensions;

@@ -1,17 +1,14 @@
 import React from 'react';
 import { Project } from '../../types';
+import { currencySymbolFor } from '../../utils/format';
 import {
   Layers,
   Box,
-  UploadCloud,
-  DollarSign,
   Sun,
-  ShieldCheck,
   Sparkles,
   ArrowRight,
   Plus,
   Users,
-  Compass,
 } from 'lucide-react';
 
 interface DashboardViewProps {
@@ -25,7 +22,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
   onNavigateToTab,
   onOpenNewProjectModal,
 }) => {
-  const currencySymbol = project.budget.currency === 'INR' ? '₹' : '$';
+  const currencySymbol = currencySymbolFor(project.budget.currency);
   const floorArea = project.dimensions.lengthFt * project.dimensions.widthFt;
   const committedPercent = Math.round((project.budget.committed / project.budget.totalCap) * 100);
 

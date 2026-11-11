@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Project, PlacedObject, CatalogItem, RoomDimensions } from '../../types';
+import { currencySymbolFor } from '../../utils/format';
 import { Room2DCanvas } from './Room2DCanvas';
 import { Room3DCanvas } from './Room3DCanvas';
 import {
@@ -15,12 +16,12 @@ import {
   Plus,
   FileDown,
   ArrowRight,
-  Maximize2,
   Wand2,
   ShieldCheck,
   Compass,
 } from 'lucide-react';
 import { autoSnapClearance } from '../../../local-engine/clearance';
+import * as api from '../../services/api';
 
 interface SpatialEditorViewProps {
   project: Project;
@@ -52,7 +53,7 @@ export const SpatialEditorView: React.FC<SpatialEditorViewProps> = ({
   const [newItemPrice, setNewItemPrice] = useState(250);
 
   // Currency helper
-  const currencySymbol = project.budget.currency === 'INR' ? '₹' : '$';
+  const currencySymbol = currencySymbolFor(project.budget.currency);
 
   // Dimension Steppers
   const handleDimensionChange = (key: keyof RoomDimensions, delta: number) => {
@@ -85,16 +86,11 @@ export const SpatialEditorView: React.FC<SpatialEditorViewProps> = ({
       setSketchFilePreview(base64Data);
 
       try {
-        const res = await fetch('/api/layout/analyze-sketch', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            imageBase64: base64Data,
-            mimeType: file.type || 'image/png',
-            manualDimensions: project.dimensions,
-          }),
+        const data = await api.analyzeSketch({
+          imageBase64: base64Data,
+          mimeType: file.type || 'image/png',
+          manualDimensions: project.dimensions,
         });
-        const data = await res.json();
 
         if (data.success && data.analysis) {
           const a = data.analysis;
@@ -134,17 +130,12 @@ export const SpatialEditorView: React.FC<SpatialEditorViewProps> = ({
   const handleGenerateSpatialPlan = async (styleName: string) => {
     setIsStagingAi(true);
     try {
-      const res = await fetch('/api/layout/stage-room', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          roomType: project.roomType,
-          dimensions: project.dimensions,
-          budgetCap: project.budget.totalCap,
-          stylePreference: styleName,
-        }),
+      const data = await api.stageRoom({
+        roomType: project.roomType,
+        dimensions: project.dimensions,
+        budgetCap: project.budget.totalCap,
+        stylePreference: styleName,
       });
-      const data = await res.json();
       if (data.success && data.stagingPlan) {
         const plan = data.stagingPlan;
         const placements: PlacedObject[] = plan.placements || [];
