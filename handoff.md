@@ -1,6 +1,6 @@
 # DrawMyRoom — Local Run Handoff
 
-**Last updated:** 2026-11-10
+**Last updated:** 2026-11-11
 **Status:** Backend and frontend are running and verified. **All planning intelligence now runs 100% locally and offline — Gemini has been removed entirely.**
 
 ---
@@ -546,3 +546,59 @@ C:\Users\ahana\AppData\Local\Temp\opencode\logs\frontend-live2.out.log
   command per process.
 - Optional engine upgrades: richer fixture modeling (radiators, columns), rug-zone
   pairing, multi-door shells — the solver already accepts arbitrary fixtures/doors.
+
+---
+
+## 12. Addendum — 2026-11-11 modularization
+
+The codebase was reorganized into a modular architecture with no functional
+changes. Route paths, methods, status codes, response shapes, request bodies,
+seed data, and all UI behavior are preserved and regression-verified
+(API characterization: 24/24 steps byte-identical after normalization of
+timestamps/IDs). See `ARCHITECTURE.md` for the full module map.
+
+New layout (moved code, nothing deleted):
+
+```
+server.ts                  # thin entry: app assembly, mounts routers, Vite/static
+server/store.ts            # readData/writeData JSON persistence (cwd/data/*.json)
+server/routes/auth.ts      # /api/auth/{login,register,me}
+server/routes/projects.ts  # /api/projects CRUD (merge semantics preserved)
+server/routes/designs.ts    # /api/designs CRUD
+server/routes/inquiries.ts # /api/inquiries
+server/routes/layout.ts    # /api/layout/* -> local-engine calls
+src/data/seed.ts           # canonical DEFAULT_PROJECT/DEFAULT_USER (was duplicated
+                           # ~200 lines in server.ts AND App.tsx)
+src/services/api.ts        # central fetch client (one per former inline call site)
+src/hooks/useDrawMyRoomApp.ts  # app state/actions moved verbatim from App.tsx
+src/utils/format.ts        # currencySymbolFor() (was a ternary in 9 components)
+```
+
+Git history (this is now a repository — the section 9 item 10 note is stale):
+
+```
+8137484 refactor(frontend): extract api service, app hook, and shared format utils
+6e36ec6 refactor(backend): split server.ts into modular routes, store, and shared seed
+17fab91 test: add API characterization harness with frozen fixtures
+3a51087 First commit - DrawMyRoom with local model
+```
+
+Verification gates (all run before each commit above; run them after any
+future change):
+
+```powershell
+$env:Path = "$env:TEMP\opencode\nodefresh\node-v26.13.0-win-x64;$env:Path"
+npm run lint        # tsc --noEmit
+npm run build       # vite build (chunk-size warning is pre-existing)
+node tests/api-characterization.mjs --compare tests/fixtures/api-baseline.json
+node node_modules/tsx/dist/cli.mjs smoke-engine.ts
+```
+
+The characterization harness never touches `data/` — it copies
+`tests/fixtures/data/` into a temp cwd and boots the server on port 3999 with
+`SERVE_FRONTEND=false`. Re-capture the baseline only after a deliberate,
+documented API change. One intentional additive delta is already baked into
+the current baseline: `POST /api/projects` with a partial body now fills
+`warranty`/`activeMaps` on the seeded materialSpecs (the shared seed is
+type-complete; the old inline server seed was not).
+
