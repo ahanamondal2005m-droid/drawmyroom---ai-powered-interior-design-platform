@@ -605,7 +605,7 @@
             "id": "mat_wood_chevron_smoked_oak",
             "plane": "SURF_FLR_01",
             "name": "Chevron Smoked Oak",
-            "category": "Flooring",
+            "category": "FLOORING",
             "origin": "Black Forest, Germany",
             "pricePerSqFt": 11.2,
             "roughness": 0.35,
@@ -613,13 +613,20 @@
             "vocRating": "Ultra-Low",
             "scratchIndex": "AC5 High-Com",
             "slipResistance": "R10 / DCOF 0.52",
-            "color": "#4A3525"
+            "color": "#4A3525",
+            "warranty": "25-Yr Res. / 10-Yr Light Comm.",
+            "activeMaps": {
+              "albedo": true,
+              "rough": true,
+              "normal": true,
+              "resolution": "4096 px²"
+            }
           },
           {
             "id": "mat_wall_microcement_slate",
             "plane": "SURF_WALL_01",
             "name": "Microcement Slate",
-            "category": "Wall Finish",
+            "category": "WALL FINISH",
             "origin": "Milan, Italy",
             "pricePerSqFt": 9.5,
             "roughness": 0.48,
@@ -627,7 +634,14 @@
             "vocRating": "A+ Pure",
             "scratchIndex": "Heavy Traffic",
             "slipResistance": "N/A",
-            "color": "#71757E"
+            "color": "#71757E",
+            "warranty": "15-Yr Commercial",
+            "activeMaps": {
+              "albedo": true,
+              "rough": true,
+              "normal": true,
+              "resolution": "4096 px²"
+            }
           }
         ]
       },
@@ -728,7 +742,7 @@
             "id": "mat_wood_chevron_smoked_oak",
             "plane": "SURF_FLR_01",
             "name": "Chevron Smoked Oak",
-            "category": "Flooring",
+            "category": "FLOORING",
             "origin": "Black Forest, Germany",
             "pricePerSqFt": 11.2,
             "roughness": 0.35,
@@ -736,13 +750,20 @@
             "vocRating": "Ultra-Low",
             "scratchIndex": "AC5 High-Com",
             "slipResistance": "R10 / DCOF 0.52",
-            "color": "#4A3525"
+            "color": "#4A3525",
+            "warranty": "25-Yr Res. / 10-Yr Light Comm.",
+            "activeMaps": {
+              "albedo": true,
+              "rough": true,
+              "normal": true,
+              "resolution": "4096 px²"
+            }
           },
           {
             "id": "mat_wall_microcement_slate",
             "plane": "SURF_WALL_01",
             "name": "Microcement Slate",
-            "category": "Wall Finish",
+            "category": "WALL FINISH",
             "origin": "Milan, Italy",
             "pricePerSqFt": 9.5,
             "roughness": 0.48,
@@ -750,7 +771,14 @@
             "vocRating": "A+ Pure",
             "scratchIndex": "Heavy Traffic",
             "slipResistance": "N/A",
-            "color": "#71757E"
+            "color": "#71757E",
+            "warranty": "15-Yr Commercial",
+            "activeMaps": {
+              "albedo": true,
+              "rough": true,
+              "normal": true,
+              "resolution": "4096 px²"
+            }
           }
         ]
       },
@@ -851,7 +879,7 @@
             "id": "mat_wood_chevron_smoked_oak",
             "plane": "SURF_FLR_01",
             "name": "Chevron Smoked Oak",
-            "category": "Flooring",
+            "category": "FLOORING",
             "origin": "Black Forest, Germany",
             "pricePerSqFt": 11.2,
             "roughness": 0.35,
@@ -859,13 +887,20 @@
             "vocRating": "Ultra-Low",
             "scratchIndex": "AC5 High-Com",
             "slipResistance": "R10 / DCOF 0.52",
-            "color": "#4A3525"
+            "color": "#4A3525",
+            "warranty": "25-Yr Res. / 10-Yr Light Comm.",
+            "activeMaps": {
+              "albedo": true,
+              "rough": true,
+              "normal": true,
+              "resolution": "4096 px²"
+            }
           },
           {
             "id": "mat_wall_microcement_slate",
             "plane": "SURF_WALL_01",
             "name": "Microcement Slate",
-            "category": "Wall Finish",
+            "category": "WALL FINISH",
             "origin": "Milan, Italy",
             "pricePerSqFt": 9.5,
             "roughness": 0.48,
@@ -873,7 +908,14 @@
             "vocRating": "A+ Pure",
             "scratchIndex": "Heavy Traffic",
             "slipResistance": "N/A",
-            "color": "#71757E"
+            "color": "#71757E",
+            "warranty": "15-Yr Commercial",
+            "activeMaps": {
+              "albedo": true,
+              "rough": true,
+              "normal": true,
+              "resolution": "4096 px²"
+            }
           }
         ]
       },
